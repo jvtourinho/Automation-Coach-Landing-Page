@@ -1,0 +1,160 @@
+/*
+Theme Name: Automation Coach
+Theme URI: https://automationcoach.com.br
+Author: Automation Coach
+Author URI: https://automationcoach.com.br
+Description: Tema moderno e responsivo para o Automation Coach - Automatize processos, empodere pessoas
+Version: 1.0
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Text Domain: automation-coach
+*/
+
+/* ==== Reset e Base ==== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  /* Cores principais */
+  --primary: hsl(270, 80%, 60%);
+  --primary-glow: hsl(280, 85%, 70%);
+  --background: hsl(0, 0%, 100%);
+  --foreground: hsl(0, 0%, 5%);
+  --card: hsl(0, 0%, 100%);
+  --muted: hsl(0, 0%, 96%);
+  --muted-foreground: hsl(0, 0%, 45%);
+  --border: hsl(0, 0%, 90%);
+  --secondary: hsl(0, 0%, 10%);
+  --secondary-foreground: hsl(0, 0%, 98%);
+  
+  /* Gradientes */
+  --gradient-primary: linear-gradient(135deg, hsl(270, 80%, 60%), hsl(280, 85%, 70%));
+  --gradient-hero: linear-gradient(180deg, hsl(0, 0%, 100%), hsl(270, 20%, 98%));
+  
+  /* Sombras */
+  --shadow-glow: 0 0 40px hsl(270, 80%, 60%, 0.3);
+  --shadow-elegant: 0 10px 30px -10px rgba(0, 0, 0, 0.2);
+  
+  /* Outros */
+  --radius: 0.75rem;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+  background: var(--background);
+  color: var(--foreground);
+  line-height: 1.6;
+}
+
+/* ==== Utilitários ==== */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+@media (min-width: 768px) {
+  .container {
+    padding: 0 1.5rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .container {
+    padding: 0 2rem;
+  }
+}
+
+/* ==== Animações ==== */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.6s ease-out forwards;
+  opacity: 0;
+}
+
+/* ==== Gradiente de Texto ==== */
+.gradient-text {
+  background: var(--gradient-primary);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* ==== Botões ==== */
+.btn {
+  display: inline-block;
+  padding: 1rem 2rem;
+  border-radius: var(--radius);
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  border: none;
+  font-size: 0.875rem;
+}
+
+.btn-hero {
+  background: rgba(255, 255, 255, 0.1);
+  color: white;
+  border: 2px solid transparent;
+  background-image: linear-gradient(rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.1)), var(--gradient-primary);
+  background-origin: border-box;
+  background-clip: padding-box, border-box;
+  backdrop-filter: blur(10px);
+}
+
+.btn-hero:hover {
+  background-image: linear-gradient(rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.2)), var(--gradient-primary);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-elegant);
+}
+
+.btn-outline {
+  background: transparent;
+  color: var(--foreground);
+  border: 1px solid var(--border);
+}
+
+.btn-outline:hover {
+  background: var(--muted);
+}
+
+@media (min-width: 768px) {
+  .btn {
+    font-size: 1rem;
+  }
+}
+
+/* ==== Cards ==== */
+.card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1.5rem;
+  transition: all 0.3s ease;
+}
+
+.card:hover {
+  border-color: var(--primary);
+  box-shadow: var(--shadow-glow);
+  transform: translateY(-2px);
+}
+
+@media (min-width: 768px) {
+  .card {
+    padding: 2rem;
+  }
+}
